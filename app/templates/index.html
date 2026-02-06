@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Calendar</title>
+</head>
+<body>
+    <h1>Featured Events</h1>
+    <ul>
+        {% for event in featured %}
+        <li>
+            <a href="/event/{{ event.id }}">{{ event.name }}</a> - {{ event.dates }}
+            <a href="https://twitter.com/intent/tweet?text=I%20will%20go%20to%20{{ event.name }}%20@%20{{ event.dates[0] }}%20{{ request.url }}" target="_blank">Share</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h1>All Events</h1>
+    <ul>
+        {% for event in events %}
+        <li>
+            <a href="/event/{{ event.id }}">{{ event.name }}</a> - {{ event.dates }}
+            <a href="https://twitter.com/intent/tweet?text=I%20will%20go%20to%20{{ event.name }}%20@%20{{ event.dates[0] }}%20{{ request.url }}" target="_blank">Share</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

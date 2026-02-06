@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ event.name }}</title>
+</head>
+<body>
+    <h1>{{ event.name }}</h1>
+    <p>{{ event.description }}</p>
+    <p>Place: {{ event.place }}</p>
+    <p>Dates:</p>
+    <ul>
+        {% for date in event.dates %}
+        <li>{{ date }}</li>
+        {% endfor %}
+    </ul>
+    {% if event.image_url %}
+    <img src="{{ event.image_url }}" alt="{{ event.name }}" width="300">
+    {% endif %}
+    <a href="/">Back to Events</a>
+</body>
+</html>
